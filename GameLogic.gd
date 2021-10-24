@@ -42,27 +42,28 @@ func init_new_game():
 func rec_fill(x, y, input_color):
 	var current_rect: ColorRect = Globals.RECTS[x][y]
 	var current_color = current_rect.get_meta("color_selection")
-	if input_color != current_color:
-		current_rect.color = Globals.RECT_COLORS[input_color]
-		current_rect.set_meta("color_selection", input_color)
-		if x > 0:
-			if Globals.RECTS[x-1][y].get_meta("color_selection") == current_color:
-				rec_fill(x-1, y, input_color)
-		if y > 0:
-			if Globals.RECTS[x][y-1].get_meta("color_selection") == current_color:
-				rec_fill(x, y-1, input_color)
-		if x < Globals.COLUMNS - 1:
-			if Globals.RECTS[x+1][y].get_meta("color_selection") == current_color:
-				rec_fill(x+1, y, input_color)
-		if y < Globals.ROWS - 1:
-			if Globals.RECTS[x][y+1].get_meta("color_selection") == current_color:
-				rec_fill(x, y+1, input_color)
+	
+	current_rect.color = Globals.RECT_COLORS[input_color]
+	current_rect.set_meta("color_selection", input_color)
+	if x > 0:
+		if Globals.RECTS[x-1][y].get_meta("color_selection") == current_color:
+			rec_fill(x-1, y, input_color)
+	if y > 0:
+		if Globals.RECTS[x][y-1].get_meta("color_selection") == current_color:
+			rec_fill(x, y-1, input_color)
+	if x < Globals.COLUMNS - 1:
+		if Globals.RECTS[x+1][y].get_meta("color_selection") == current_color:
+			rec_fill(x+1, y, input_color)
+	if y < Globals.ROWS - 1:
+		if Globals.RECTS[x][y+1].get_meta("color_selection") == current_color:
+			rec_fill(x, y+1, input_color)
 
 func play_turn(select_color):
-	Globals.move_counter += 1
-	Globals.MainScene.find_node("StatusText").UpdateMoves()
-	
-	rec_fill(0, 0, select_color)
+	if select_color != Globals.RECTS[0][0].get_meta("color_selection"):
+		Globals.move_counter += 1
+		Globals.MainScene.find_node("StatusText").UpdateMoves()
+		
+		rec_fill(0, 0, select_color)
 
 	if Globals.move_counter == Globals.MAX_MOVES:
 		# Handle no more turns
