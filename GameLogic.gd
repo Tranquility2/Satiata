@@ -36,6 +36,7 @@ func init_new_game():
 	Globals.MainScene.find_node("GridArea").clear_area()
 	Globals.RECTS = Array()
 	Globals.move_counter = 0
+	Globals.MainScene.find_node("StatusText").UpdateMoves()
 	draw_grid()
 	randomize_rects_color()
 	
@@ -45,6 +46,7 @@ func rec_fill(x, y, input_color):
 	
 	current_rect.color = Globals.RECT_COLORS[input_color]
 	current_rect.set_meta("color_selection", input_color)
+	
 	if x > 0:
 		if Globals.RECTS[x-1][y].get_meta("color_selection") == current_color:
 			rec_fill(x-1, y, input_color)
@@ -58,14 +60,32 @@ func rec_fill(x, y, input_color):
 		if Globals.RECTS[x][y+1].get_meta("color_selection") == current_color:
 			rec_fill(x, y+1, input_color)
 
+func check_full(select_color):
+	for x in range(Globals.COLUMNS):
+		for y in range(Globals.ROWS):
+			var rect = Globals.RECTS[x][y]
+			if rect.get_meta("color_selection") != select_color:
+				return false
+	
+	return true
+	
+func end_game():
+	Globals.MainScene.find_node("ButtonsArea").hide()
+	Globals.MainScene.find_node("ButtonNewGame").show()
+
 func play_turn(select_color):
 	if select_color != Globals.RECTS[0][0].get_meta("color_selection"):
 		Globals.move_counter += 1
 		Globals.MainScene.find_node("StatusText").UpdateMoves()
 		
 		rec_fill(0, 0, select_color)
+		
+		if check_full(select_color):
+			# Handle win
+			Globals.MainScene.find_node("StatusText").UpdateWin()
+			Globals.MainScene.find_node("GridArea").color_swap_effect()
+			end_game()
 
 	if Globals.move_counter == Globals.MAX_MOVES:
 		# Handle no more turns
-		Globals.MainScene.find_node("ButtonsArea").hide()
-		Globals.MainScene.find_node("ButtonNewGame").show()
+		end_game()

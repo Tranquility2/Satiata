@@ -28,6 +28,15 @@ func _area_gui_input(event, rect, loc):
 				print("Left button was clicked at ", event.position, " on " , str(loc), " id: ", str(rect))
 				cycle_color(rect)
 
+func color_swap_effect():
+	var timer = Timer.new()
+	timer.set_wait_time(0.1)
+	timer.set_one_shot(false)
+	timer.connect("timeout", Globals.GameLogic, "randomize_rects_color")
+	self.add_child(timer)
+	timer.start()
+	
+	return timer
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

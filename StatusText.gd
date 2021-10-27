@@ -10,6 +10,9 @@ func UpdateMoves():
 		text_msg += ", Select color"
 	self.text = text_msg
 
+func UpdateWin():
+	self.text = "Very Nice!"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

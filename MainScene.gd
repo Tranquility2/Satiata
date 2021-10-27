@@ -14,7 +14,7 @@ func resize_screen():
 
 func register_buttons():
 	$ButtonsArea/ButtonBlue.connect("pressed", Globals.GameLogic, "play_turn", [Globals.BLUE_COLOR])
-	$ButtonsArea/ButtonGreen.connect("pressed", Globals.GameLogic, "play_turn", [Globals.GREEN_COLOR])
+	#$ButtonsArea/ButtonGreen.connect("pressed", Globals.GameLogic, "play_turn", [Globals.GREEN_COLOR])
 	$ButtonsArea/ButtonRed.connect("pressed", Globals.GameLogic, "play_turn", [Globals.RED_COLOR])
 	$ButtonsArea/ButtonYellow.connect("pressed", Globals.GameLogic, "play_turn", [Globals.YELLOW_COLOR])
 	$ButtonNewGame.connect("pressed", Globals.GameLogic, "init_new_game")
