@@ -6,14 +6,14 @@ const DIMS = 15
 
 const RECT_COLORS = [Color(1.0, 0.0, 0.0, 1.0),
 					 Color(0.0, 0.0, 1.0, 1.0),
-					 #Color(0.0, 1.0, 0.0, 1.0),
+					 Color(0.0, 1.0, 0.0, 1.0),
 					 Color(1.0, 1.0, 0.0, 1.0)]
 
 const MAX_MOVES = 21
 
 enum {RED_COLOR, 
 	  BLUE_COLOR, 
-	  #GREEN_COLOR, 
+	  GREEN_COLOR, 
 	  YELLOW_COLOR}
 
 var RECTS = null
