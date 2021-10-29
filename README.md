@@ -1,1 +1,2 @@
 # Satiata
+![Logo](./Logo.png)
