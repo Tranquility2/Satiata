@@ -4,3 +4,6 @@
 
 
 ![Logo](./Logo.png)
+
+
+[![Play Now](https://img.shields.io/badge/Play-Satiata-green?style=for-the-badge&logo=godotengine)](https://tranquility2.github.io/Satiata/)
