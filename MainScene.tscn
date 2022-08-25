@@ -12,7 +12,7 @@ extra_spacing_char = 1
 extra_spacing_space = 1
 font_data = ExtResource( 7 )
 
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.0352941, 0, 1, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -21,18 +21,18 @@ border_width_bottom = 5
 border_color = Color( 0.490196, 0.490196, 0.490196, 1 )
 border_blend = true
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.25098, 0.243137, 0.537255, 1 )
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.054902, 0.027451, 0.768627, 1 )
 
-[sub_resource type="Shader" id=8]
+[sub_resource type="Shader" id=5]
 
-[sub_resource type="ShaderMaterial" id=9]
-shader = SubResource( 8 )
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
 
-[sub_resource type="StyleBoxFlat" id=14]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 1, 0, 0, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -41,16 +41,16 @@ border_width_bottom = 5
 border_color = Color( 0.490196, 0.490196, 0.490196, 1 )
 border_blend = true
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.54902, 0.278431, 0.278431, 1 )
 border_color = Color( 0, 0, 0, 1 )
 border_blend = true
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.666667, 0, 0, 1 )
 border_blend = true
 
-[sub_resource type="StyleBoxFlat" id=19]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.054902, 1, 0, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -59,11 +59,11 @@ border_width_bottom = 5
 border_color = Color( 0.490196, 0.490196, 0.490196, 1 )
 border_blend = true
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.278431, 0.501961, 0.262745, 1 )
 border_blend = true
 
-[sub_resource type="StyleBoxFlat" id=18]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 1, 1, 0, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -74,12 +74,12 @@ border_blend = true
 [sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.470588, 0.470588, 0.247059, 1 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.709804, 0.709804, 0, 1 )
 border_color = Color( 0.490196, 0.490196, 0.490196, 1 )
 border_blend = true
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=15]
 font_data = ExtResource( 7 )
 
 [node name="MainScene" type="Node2D"]
@@ -114,43 +114,42 @@ position = Vector2( 0, 340 )
 margin_left = 80.0
 margin_right = 160.0
 margin_bottom = 30.0
-custom_styles/hover = SubResource( 17 )
-custom_styles/pressed = SubResource( 11 )
-custom_styles/normal = SubResource( 16 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonRed" type="Button" parent="ButtonsArea"]
-material = SubResource( 9 )
-margin_left = -0.561234
-margin_right = 79.4388
+material = SubResource( 6 )
+margin_right = 80.0
 margin_bottom = 30.0
-custom_styles/hover = SubResource( 14 )
-custom_styles/pressed = SubResource( 10 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonGreen" type="Button" parent="ButtonsArea"]
-margin_left = 160.561
-margin_right = 240.561
+margin_left = 160.0
+margin_right = 240.0
 margin_bottom = 30.0
-custom_styles/hover = SubResource( 19 )
-custom_styles/pressed = SubResource( 12 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
 custom_styles/normal = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonYellow" type="Button" parent="ButtonsArea"]
-margin_left = 240.0
-margin_right = 320.0
+margin_left = 239.439
+margin_right = 319.439
 margin_bottom = 30.0
-custom_styles/hover = SubResource( 18 )
+custom_styles/hover = SubResource( 12 )
 custom_styles/pressed = SubResource( 13 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/normal = SubResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -160,7 +159,7 @@ visible = false
 margin_top = 340.0
 margin_right = 320.0
 margin_bottom = 370.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 15 )
 text = "New Game"
 __meta__ = {
 "_edit_use_anchors_": false
