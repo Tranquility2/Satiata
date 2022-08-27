@@ -18,9 +18,6 @@ func cycle_color(rect: ColorRect):
 	rect.color = Globals.RECT_COLORS[new_color_selection]
 	rect.set_meta("color_selection", new_color_selection)
 
-#func _ready():
-#	pass
-
 func _area_gui_input(event, rect, loc):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed:
@@ -37,7 +34,3 @@ func color_swap_effect():
 	timer.start()
 	
 	return timer
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
